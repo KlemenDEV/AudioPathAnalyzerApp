@@ -6,7 +6,7 @@ connectivity.
 
 Measurement results dashboard panel screenshots:
 
-![In-app screenshot](./screenshot1.jpg =250x)
+<img src="./screenshot1.jpg" width="250" alt="Screenshot 1">
 
 Bode diagram display:
 
