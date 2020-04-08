@@ -1,6 +1,6 @@
 # Audio path analyzer app
 
-This is Android app used to remotely use the https://github.com/KlemenDEV/AudioPathAnalyzer project.
+This is Android app used to remotely control and use the https://github.com/KlemenDEV/AudioPathAnalyzer project.
 Recommended use case is Raspberry Pi loaded with Audio path analyzer binary and WiFi hotspot for the
 connectivity.
 
