@@ -6,11 +6,11 @@ connectivity.
 
 Measurement results dashboard panel screenshots:
 
-![In-app screenshot](./screenshot1.jpg)
+![In-app screenshot](./screenshot1.jpg | width=360)
 
 Bode diagram display:
 
-![In-app screenshot](./screenshot2.jpg)
+![In-app screenshot](./screenshot2.jpg | width=360)
 
 # Audio path analyzer
 
