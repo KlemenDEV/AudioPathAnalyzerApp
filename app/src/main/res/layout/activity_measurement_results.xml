@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MeasurementResultsActivity">
+
+    <TabHost
+            tools:context=".activity.MeasurementResultsActivity"
+            android:id="@+id/results_tabs"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <LinearLayout android:orientation="horizontal"
+                      android:background="@color/white"
+                      android:layout_width="fill_parent"
+                      android:layout_height="fill_parent"
+                      android:baselineAligned="false">
+
+            <FrameLayout android:layout_width="wrap_content"
+                         android:layout_height="match_parent">
+
+                <TabWidget android:id="@android:id/tabs"
+                           android:layout_width="fill_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/white"
+                           android:visibility="gone"/>
+
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_height="fill_parent"
+                              android:background="@color/white"
+                              android:orientation="vertical">
+
+                    <ToggleButton android:layout_height="85dp"
+                                  android:layout_width="100dp"
+                                  android:textOff="@string/tab_general"
+                                  android:textOn="@string/tab_general"
+                                  android:drawableTop="@drawable/ic_general"
+                                  android:textAllCaps="false"
+                                  android:textColor="@color/colorPrimaryDark"
+                                  android:paddingTop="17dp"
+                                  android:background="@drawable/button_border_bottom"
+                                  style="?android:attr/borderlessButtonStyle"
+                                  android:id="@+id/results_general"
+                                  android:onClick="tabHandler"/>
+
+                    <ToggleButton android:layout_height="85dp"
+                                  android:layout_width="100dp"
+                                  android:textOff="@string/tab_bode"
+                                  android:textOn="@string/tab_bode"
+                                  android:drawableTop="@drawable/ic_graph"
+                                  android:textAllCaps="false"
+                                  android:textColor="@color/colorPrimaryDark"
+                                  android:paddingTop="17dp"
+                                  android:background="@drawable/button_border_bottom"
+                                  style="?android:attr/borderlessButtonStyle"
+                                  android:id="@+id/results_bode"
+                                  android:onClick="tabHandler"/>
+
+                    <ToggleButton android:layout_height="85dp"
+                                  android:layout_width="100dp"
+                                  android:textOff="@string/tab_thd"
+                                  android:textOn="@string/tab_thd"
+                                  android:drawableTop="@drawable/ic_eq"
+                                  android:textAllCaps="false"
+                                  android:textColor="@color/colorPrimaryDark"
+                                  android:paddingTop="17dp"
+                                  android:background="@drawable/button_border_bottom"
+                                  style="?android:attr/borderlessButtonStyle"
+                                  android:id="@+id/results_thd"
+                                  android:onClick="tabHandler"/>
+
+                    <LinearLayout android:layout_width="fill_parent"
+                                  android:layout_height="fill_parent"
+                                  android:background="@drawable/button_border_bottom"
+                                  android:orientation="vertical"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <FrameLayout android:id="@android:id/tabcontent"
+                         android:layout_width="fill_parent"
+                         android:layout_height="fill_parent"/>
+
+        </LinearLayout>
+
+    </TabHost>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gtabs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="100dp"/>
+
+    <ImageButton
+            android:id="@+id/export_measurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginBottom="30dp"
+            android:background="@android:color/transparent"
+            android:onClick="back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/gtabs"
+            android:contentDescription="@string/export_measurement"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

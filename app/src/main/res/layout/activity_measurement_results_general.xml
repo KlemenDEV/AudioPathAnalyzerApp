@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.audiopathanalyzer.activity.MeasurementResultsGeneralActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="89"
+            android:textColor="@color/black"
+            android:textSize="120sp"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/g1"
+            app:layout_constraintRight_toRightOf="@id/g1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/results_general_score"/>
+
+    <TextView
+            android:text="@string/score"
+            app:layout_constraintBottom_toTopOf="@id/results_general_score"
+            app:layout_constraintLeft_toLeftOf="@id/g1"
+            app:layout_constraintRight_toRightOf="@id/g1"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="@string/out_of_100"
+            app:layout_constraintTop_toBottomOf="@id/results_general_score"
+            app:layout_constraintLeft_toLeftOf="@id/g1"
+            app:layout_constraintRight_toRightOf="@id/g1"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.23"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+    <View
+            android:id="@+id/results_general_le"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/g2"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"/>
+
+    <View
+            android:id="@+id/results_general_lw"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/g2"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"/>
+
+    <View
+            android:id="@+id/results_general_ln"
+            app:layout_constraintBottom_toBottomOf="@id/g3"
+            app:layout_constraintLeft_toLeftOf="@id/g2"
+            app:layout_constraintRight_toRightOf="@id/g2"
+            android:layout_marginBottom="30dp"
+            android:layout_width="1dp"
+            android:layout_height="120dp"
+            android:background="@color/colorAccent"/>
+
+    <View
+            android:id="@+id/results_general_ls"
+            app:layout_constraintTop_toTopOf="@id/g3"
+            app:layout_constraintLeft_toLeftOf="@id/g2"
+            app:layout_constraintRight_toRightOf="@id/g2"
+            android:layout_marginTop="30dp"
+            android:layout_width="1dp"
+            android:layout_height="120dp"
+            android:background="@color/colorAccent"/>
+
+    <TextView
+            android:id="@+id/dc_offset_text"
+            android:text="@string/dc_offset"
+            app:layout_constraintBottom_toBottomOf="@id/results_general_le"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_le"
+            app:layout_constraintRight_toRightOf="@id/results_general_le"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            tools:text="0.014 mV"
+            android:id="@+id/dc_offset"
+            app:layout_constraintBottom_toTopOf="@id/dc_offset_text"
+            app:layout_constraintTop_toTopOf="@id/results_general_ln"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_le"
+            app:layout_constraintRight_toRightOf="@id/results_general_le"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="@string/thd_1khz"
+            app:layout_constraintBottom_toBottomOf="@id/results_general_lw"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_lw"
+            app:layout_constraintRight_toRightOf="@id/results_general_lw"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/thd_text"/>
+
+    <TextView
+            tools:text="0.01 %"
+            android:id="@+id/thd_value"
+            app:layout_constraintBottom_toTopOf="@id/thd_text"
+            app:layout_constraintTop_toTopOf="@id/results_general_ln"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_lw"
+            app:layout_constraintRight_toRightOf="@id/results_general_lw"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="@string/invalid_takes"
+            app:layout_constraintTop_toTopOf="@id/results_general_lw"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_lw"
+            app:layout_constraintRight_toRightOf="@id/results_general_lw"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/invalid_takes_text"/>
+
+    <TextView
+            tools:text="0"
+            android:id="@+id/invalid_takes"
+            app:layout_constraintTop_toBottomOf="@id/invalid_takes_text"
+            app:layout_constraintBottom_toBottomOf="@id/results_general_ls"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_lw"
+            app:layout_constraintRight_toRightOf="@id/results_general_lw"
+            android:textSize="32sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="@string/max_f_db"
+            app:layout_constraintTop_toTopOf="@id/results_general_le"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_le"
+            app:layout_constraintRight_toRightOf="@id/results_general_le"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/maf_f_db_text"/>
+
+    <TextView
+            android:id="@+id/max_db"
+            tools:text="-0.110 dB"
+            app:layout_constraintTop_toBottomOf="@id/maf_f_db_text"
+            app:layout_constraintBottom_toBottomOf="@id/results_general_ls"
+            app:layout_constraintLeft_toLeftOf="@id/results_general_le"
+            app:layout_constraintRight_toRightOf="@id/results_general_le"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageButton
+            android:id="@+id/export_measurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_export"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@android:color/transparent"
+            android:onClick="exportMeasurement"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/export_measurement"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

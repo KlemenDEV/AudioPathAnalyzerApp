@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Audio path analyzer</string>
+    <string name="connecting">Connecting</string>
+    <string name="measurement_in_progress_please_wait">Measurement in progress. Please wait.</string>
+    <string name="calibration_in_progress_please_wait">Calibration in progress. Please wait.</string>
+    <string name="preferences">Preferences and calibration</string>
+    <string name="open_measurement">Open saved measurement</string>
+    <string name="new_measurement">New measurement</string>
+    <string name="recalibrate">Recalibrate</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_changes">Save changes</string>
+    <string name="sweep_start_frequency">Sweep start frequency:</string>
+    <string name="sweep_end_frequency">Sweep end frequency:</string>
+    <string name="sweep_steps">Sweep steps:</string>
+    <string name="sweep_start_frequency_tf">Sweep start frequency</string>
+    <string name="sweep_end_frequency_tf">Sweep end frequency</string>
+    <string name="sweep_steps_tf">Sweep steps</string>
+    <string name="a_db">A / dB</string>
+    <string name="f_hz">f / Hz</string>
+    <string name="export_to_csv">Export graph to CSV</string>
+    <string name="thd_percents">THD / %</string>
+    <string name="score">Score</string>
+    <string name="out_of_100">out of 100</string>
+    <string name="dc_offset">DC offset</string>
+    <string name="thd_1khz">THD@1kHz</string>
+    <string name="invalid_takes">Invalid takes</string>
+    <string name="max_f_db">Max f -dB</string>
+    <string name="export_measurement">Export measurement</string>
+    <string name="tab_general">Overview</string>
+    <string name="tab_bode">Frequency</string>
+    <string name="tab_thd">THD factor</string>
+</resources>

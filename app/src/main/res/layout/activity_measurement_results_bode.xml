@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.audiopathanalyzer.activity.MeasurementResultsBodeActivity">
+
+    <Button
+            android:text="@string/export_to_csv"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            android:onClick="exportToCSV"
+            app:layout_constraintRight_toRightOf="@id/results_bode_graph"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/export_csv_bode"/>
+
+    <TextView
+            android:text="@string/f_hz"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/results_bode_graph"
+            android:id="@+id/results_bode_graph_x"/>
+
+    <com.audiopathanalyzer.util.VerticalTextView
+            android:text="@string/a_db"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="10dp"
+            app:layout_constraintRight_toLeftOf="@id/results_bode_graph"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/results_bode_graph_y"/>
+
+    <com.audiopathanalyzer.util.LogLineChart
+            android:id="@+id/results_bode_graph"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/export_csv_bode">
+    </com.audiopathanalyzer.util.LogLineChart>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
