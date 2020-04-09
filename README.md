@@ -1,6 +1,6 @@
 # Audio path analyzer app
 
-This is Android app used to remotely use the https://github.com/KlemenDEV/AudioPathAnalyzer project.
+This is Android app used to remotely control and use the https://github.com/KlemenDEV/AudioPathAnalyzer project.
 Recommended use case is Raspberry Pi loaded with Audio path analyzer binary and WiFi hotspot for the
 connectivity.
 
@@ -18,7 +18,7 @@ Bode diagram display:
 
 # Audio path analyzer
 
-This project aims to develop an audio analyzer for analyzing audio transport path quality using criteria such as:
+This project aims to develop audio analyzer for analyzing audio transport path quality using criteria such as:
 * First-order frequency response
 * Harmonic distortion properties (THD)
 * (DC offset)
