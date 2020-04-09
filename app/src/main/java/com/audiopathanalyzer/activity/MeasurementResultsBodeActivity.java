@@ -48,7 +48,7 @@ public class MeasurementResultsBodeActivity extends AppCompatActivity {
 			}
 
 			LogLineChart results_bode_graph = findViewById(R.id.results_bode_graph);
-			results_bode_graph.setEntryList(entryList);
+			results_bode_graph.setEntryListAndFormat(entryList, "%.3f dB at %d Hz");
 
 			results_bode_graph.getAxisLeft().setAxisMinimum(Math.min(-10, min));
 			results_bode_graph.getAxisLeft().setAxisMaximum(Math.max(2, max));

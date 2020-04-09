@@ -13,37 +13,37 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 import java.util.List;
 
 public class LogLineChart extends LineChart {
-	
+
 	public LogLineChart(Context context) {
 		super(context);
-		initCustom(context);
+		initCustom();
 	}
 
 	public LogLineChart(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		initCustom(context);
+		initCustom();
 	}
 
 	public LogLineChart(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		initCustom(context);
+		initCustom();
 	}
 
-	public void setEntryList(List<Entry> entryList) {
+	public void setEntryListAndFormat(List<Entry> entryList, String format) {
 		setXAxisRenderer(
 				new LogXAxisRenderer(getViewPortHandler(), getXAxis(),
 						getTransformer(YAxis.AxisDependency.LEFT), entryList));
 		getXAxis().setLabelCount(entryList.size(), true);
+
+		setMarker(new ShowValueMarkerView(getContext().getApplicationContext(), R.layout.marker_layout, format));
 	}
 	
-	private void initCustom(Context context) {
+	private void initCustom() {
 		setPinchZoom(true);
 		setScaleYEnabled(true);
 		setScaleXEnabled(true);
 		getLegend().setEnabled(false);
 		setDescription(null);
-
-		setMarker(new ShowValueMarkerView(context.getApplicationContext(), R.layout.marker_layout));
 
 		getXAxis().setAxisMinimum(
 				(float) Math.log10(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementMinF()));

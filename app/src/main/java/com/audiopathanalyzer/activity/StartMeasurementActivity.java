@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.audiopathanalyzer.AudioPathAnalyzer;
 import com.audiopathanalyzer.R;
@@ -19,19 +20,20 @@ public class StartMeasurementActivity extends AppCompatActivity {
 	@Override protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start_measurement);
-
-		if (AudioPathAnalyzer.getApplication().getSessionDirect() == null || !AudioPathAnalyzer.getApplication()
-				.getSessionDirect().isConnected()) {
-			findViewById(R.id.start_measurement).setEnabled(false);
-			findViewById(R.id.preferences).setEnabled(false);
-		}
 	}
 
 	public void startMeasurement(View view) {
-		((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(50);
+		if (AudioPathAnalyzer.getApplication().getSessionDirect() == null || !AudioPathAnalyzer.getApplication()
+				.getSessionDirect().isConnected()) {
+			((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
 
-		startActivity(new Intent(this, MeasurementRunningActivity.class));
-		overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+			Toast.makeText(this, "Measurement system is not connected", Toast.LENGTH_LONG).show();
+		} else {
+			((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(50);
+
+			startActivity(new Intent(this, MeasurementRunningActivity.class));
+			overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+		}
 	}
 
 	public void openPreferences(View view) {

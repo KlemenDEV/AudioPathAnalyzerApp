@@ -12,16 +12,18 @@ import com.github.mikephil.charting.utils.MPPointF;
 
 @SuppressLint("ViewConstructor") public class ShowValueMarkerView extends MarkerView implements IMarker {
 
-	private TextView tvContent;
+	private final TextView tvContent;
+	private final String format;
 
-	public ShowValueMarkerView(Context context, int layoutResource) {
+	public ShowValueMarkerView(Context context, int layoutResource, String format) {
 		super(context, layoutResource);
 		tvContent = findViewById(R.id.tvContent);
+		this.format = format;
 	}
 
 	@SuppressLint({ "DefaultLocale", "SetTextI18n" }) @Override
 	public void refreshContent(Entry e, Highlight highlight) {
-		tvContent.setText(String.format("%.2f", e.getY()) + " dB at " + (int) Math.pow(10, e.getX()) + " Hz");
+		tvContent.setText(String.format(format, e.getY(), (int) Math.pow(10, e.getX())));
 		super.refreshContent(e, highlight);
 	}
 

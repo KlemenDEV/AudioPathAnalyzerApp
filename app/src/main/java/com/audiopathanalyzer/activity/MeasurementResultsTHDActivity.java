@@ -36,7 +36,7 @@ public class MeasurementResultsTHDActivity extends AppCompatActivity {
 			}
 
 			LogLineChart results_bode_graph = findViewById(R.id.results_thd_graph);
-			results_bode_graph.setEntryList(entryList);
+			results_bode_graph.setEntryListAndFormat(entryList, "%.4f %% at %d Hz");
 
 			LineDataSet dataset = new LineDataSet(entryList, "thd");
 			dataset.setColors(entryListColors);

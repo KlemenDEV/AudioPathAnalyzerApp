@@ -30,6 +30,11 @@ public class PreferencesActivity extends AppCompatActivity {
 				.setText(Integer.toString(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementMaxF()));
 		preferences_steps.setText(
 				Integer.toString(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementStepsCount()));
+
+		if (AudioPathAnalyzer.getApplication().getSessionDirect() == null || !AudioPathAnalyzer.getApplication()
+				.getSessionDirect().isConnected()) {
+			findViewById(R.id.preferences_recalibrate).setEnabled(false);
+		}
 	}
 
 	public void recalibrate(View view) {
@@ -63,11 +68,19 @@ public class PreferencesActivity extends AppCompatActivity {
 	}
 
 	private void runCalibration(boolean forced) {
+		if (AudioPathAnalyzer.getApplication().getSessionDirect() == null || !AudioPathAnalyzer.getApplication()
+				.getSessionDirect().isConnected()) {
+			overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+			finish();
+			return; // skip calibration if not connected
+		}
+
 		Intent intent = new Intent(this, MeasurementRunningActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		intent.putExtra(MeasurementRunningActivity.CALIBRATION_MEASUREMENT_EXTRA, true);
 		intent.putExtra(MeasurementRunningActivity.CALIBRATION_FORCED_EXTRA, forced);
 		startActivity(intent);
+
 		overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 		finish();
 	}
