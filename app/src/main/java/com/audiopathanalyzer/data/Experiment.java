@@ -74,9 +74,9 @@ public class Experiment implements Serializable {
 	public int getFancyScore() {
 		float score = 100;
 
-		score -= getTHD1khz() * 15;
+		score -= getTHD1khz() * 0.5;
 		score -= Math.abs(getMinDB()) * 0.5;
-		score -= Math.abs(getAvgDB()) * 2;
+		score -= Math.abs(getAvgDB()) * 3;
 		score -= getInvalidCount();
 
 		return Math.round(Math.max(score, 0));
