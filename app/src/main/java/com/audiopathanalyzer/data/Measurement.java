@@ -13,22 +13,22 @@ public class Measurement implements Serializable {
 	@Expose final float thd_n;
 	@Expose final boolean valid;
 
-	public Measurement(float f, float a, float thd_f, boolean valid) {
+	public Measurement(float f, float a, float thd_r, boolean valid) {
 		this.f = f;
 		this.a = a;
-		this.thd_f = thd_f;
 		this.valid = valid;
 
-		this.thd_r = 0;
+		this.thd_f = 0;
+		this.thd_r = thd_r * 100f;
 		this.thd_n = 0;
 	}
 
 	public Measurement(float f, float a, float thd_f, float thd_r, float thd_n, boolean valid) {
 		this.f = f;
 		this.a = a;
-		this.thd_f = thd_f;
-		this.thd_r = thd_r;
-		this.thd_n = thd_n;
+		this.thd_f = thd_f * 100f;
+		this.thd_r = thd_r * 100f;
+		this.thd_n = thd_n * 100f;
 		this.valid = valid;
 	}
 

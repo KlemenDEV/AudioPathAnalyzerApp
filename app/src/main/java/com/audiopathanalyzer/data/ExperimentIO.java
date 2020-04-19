@@ -58,7 +58,7 @@ public class ExperimentIO {
 				new OutputStreamWriter(context.getContentResolver().openOutputStream(uri)))) {
 			StringBuilder csvbuilder = new StringBuilder();
 			for (Measurement m : experiment.getTakes()) {
-				csvbuilder.append(m.getF()).append(",").append(m.getThd_f()).append("\n");
+				csvbuilder.append(m.getF()).append(",").append(m.getThd_r()).append("\n");
 			}
 
 			bw.write(csvbuilder.toString());

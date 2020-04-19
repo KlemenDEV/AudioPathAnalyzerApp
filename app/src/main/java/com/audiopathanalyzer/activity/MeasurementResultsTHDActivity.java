@@ -31,7 +31,7 @@ public class MeasurementResultsTHDActivity extends AppCompatActivity {
 			List<Entry> entryList = new ArrayList<>();
 			List<Integer> entryListColors = new ArrayList<>();
 			for (Measurement m : result.getTakes()) {
-				entryList.add(new Entry((float) Math.log10(m.getF()), m.getThd_f()));
+				entryList.add(new Entry((float) Math.log10(m.getF()), m.getThd_r()));
 				entryListColors.add(m.isValid() ? R.color.colorPrimary : R.color.error);
 			}
 

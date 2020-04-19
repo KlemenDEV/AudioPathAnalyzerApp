@@ -36,12 +36,12 @@ public class Experiment implements Serializable {
 
 		for (Measurement m : takes) {
 			if (m.f == 1000) {
-				return m.thd_f;
+				return m.thd_r;
 			} else if (m.f < 1000) {
-				thd_l = m.thd_f;
+				thd_l = m.thd_r;
 				f_l = m.f;
 			} else {
-				thd_h = m.thd_f;
+				thd_h = m.thd_r;
 				f_h = m.f;
 
 				float k = (thd_h - thd_l) / (f_h - f_l);
