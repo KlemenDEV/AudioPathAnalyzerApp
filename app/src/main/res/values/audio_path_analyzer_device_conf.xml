@@ -1,0 +1,6 @@
+<resources>
+    <string name="pi_ip">10.0.0.219</string>
+    <string name="pi_username">pi</string>
+    <string name="pi_password">raspberry</string>
+    <string name="pi_sw_root">/usr/audiopathanalyzer/cmake-build-debug</string>
+</resources>

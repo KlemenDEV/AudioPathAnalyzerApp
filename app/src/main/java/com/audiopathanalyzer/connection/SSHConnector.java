@@ -7,7 +7,7 @@ import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import com.audiopathanalyzer.AudioPathAnalyzer;
-import com.audiopathanalyzer.StaticConfiguration;
+import com.audiopathanalyzer.R;
 import com.audiopathanalyzer.activity.MeasurementRunningActivity;
 import com.audiopathanalyzer.activity.StartMeasurementActivity;
 import com.jcraft.jsch.JSch;
@@ -19,7 +19,7 @@ import java.util.Properties;
 
 public class SSHConnector extends AsyncTask<Void, Void, Session> {
 
-	private WeakReference<Activity> parent;
+	private final WeakReference<Activity> parent;
 
 	public SSHConnector(@Nullable Activity parent) {
 		this.parent = new WeakReference<>(parent);
@@ -34,8 +34,9 @@ public class SSHConnector extends AsyncTask<Void, Void, Session> {
 		JSch jsch = new JSch();
 
 		try {
-			Session session = jsch.getSession(StaticConfiguration.PI_USERNAME, StaticConfiguration.PI_IP, 22);
-			session.setPassword(StaticConfiguration.PI_PASSWORD);
+			Session session = jsch.getSession(AudioPathAnalyzer.getApplication().getString(R.string.pi_username),
+					AudioPathAnalyzer.getApplication().getString(R.string.pi_ip), 22);
+			session.setPassword(AudioPathAnalyzer.getApplication().getString(R.string.pi_password));
 
 			// skip host key check
 			Properties prop = new Properties();

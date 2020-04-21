@@ -2,7 +2,7 @@ package com.audiopathanalyzer.connection;
 
 import androidx.annotation.Nullable;
 import com.audiopathanalyzer.AudioPathAnalyzer;
-import com.audiopathanalyzer.StaticConfiguration;
+import com.audiopathanalyzer.R;
 
 public class CommandBuilder {
 
@@ -12,7 +12,7 @@ public class CommandBuilder {
 
 	public static String build(@Nullable String opts) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("cd " + StaticConfiguration.PI_SW_ROOT);
+		sb.append("cd ").append(AudioPathAnalyzer.getApplication().getString(R.string.pi_sw_root));
 		sb.append(" && ");
 
 		sb.append("./AudioPathAnalyzer");

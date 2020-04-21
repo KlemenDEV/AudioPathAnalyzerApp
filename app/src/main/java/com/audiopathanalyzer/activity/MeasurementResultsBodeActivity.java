@@ -20,8 +20,6 @@ import java.util.Locale;
 
 public class MeasurementResultsBodeActivity extends AppCompatActivity {
 
-	private List<Entry> entryList;
-
 	@Override protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_measurement_results_bode);
@@ -30,7 +28,7 @@ public class MeasurementResultsBodeActivity extends AppCompatActivity {
 				.getSerializableExtra(MeasurementResultsActivity.EXPERIMENT_RESULT_EXTRA);
 
 		if (result != null) {
-			entryList = new ArrayList<>();
+			List<Entry> entryList = new ArrayList<>();
 			List<Integer> entryListColors = new ArrayList<>();
 
 			float min = Integer.MAX_VALUE;
@@ -49,9 +47,6 @@ public class MeasurementResultsBodeActivity extends AppCompatActivity {
 
 			LogLineChart results_bode_graph = findViewById(R.id.results_bode_graph);
 			results_bode_graph.setEntryListAndFormat(entryList, "%.3f dB at %d Hz");
-
-			results_bode_graph.getAxisLeft().setAxisMinimum(Math.min(-10, min));
-			results_bode_graph.getAxisLeft().setAxisMaximum(Math.max(2, max));
 
 			LineDataSet dataset = new LineDataSet(entryList, "bode");
 			dataset.setColors(entryListColors);

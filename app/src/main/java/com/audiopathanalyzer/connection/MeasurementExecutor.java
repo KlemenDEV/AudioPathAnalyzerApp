@@ -33,7 +33,7 @@ public class MeasurementExecutor extends AsyncTask<Void, MeasurementProgress, Ex
 
 	private ChannelExec channel;
 
-	private WeakReference<Activity> parent;
+	private final WeakReference<Activity> parent;
 
 	private boolean canceled = false;
 

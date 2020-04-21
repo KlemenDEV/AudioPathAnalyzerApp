@@ -76,7 +76,7 @@ public class Experiment implements Serializable {
 
 		score -= getTHD1khz() * 0.5;
 		score -= Math.abs(getMinDB()) * 0.5;
-		score -= Math.abs(getAvgDB()) * 3;
+		score -= Math.abs(getAvgDB()) * 2;
 		score -= getInvalidCount();
 
 		return Math.round(Math.max(score, 0));
