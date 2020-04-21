@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class PreferencesActivity extends AppCompatActivity {
 	private EditText preferences_start_f;
 	private EditText preferences_end_f;
 	private EditText preferences_steps;
+	private CheckBox enable_smoothing;
 
 	@SuppressLint("SetTextI18n") @Override protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class PreferencesActivity extends AppCompatActivity {
 		preferences_start_f = findViewById(R.id.preferences_start_f);
 		preferences_end_f = findViewById(R.id.preferences_end_f);
 		preferences_steps = findViewById(R.id.preferences_steps);
+		enable_smoothing = findViewById(R.id.enable_smoothing);
 
 		preferences_start_f
 				.setText(Integer.toString(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementMinF()));
@@ -30,6 +33,7 @@ public class PreferencesActivity extends AppCompatActivity {
 				.setText(Integer.toString(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementMaxF()));
 		preferences_steps.setText(
 				Integer.toString(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementStepsCount()));
+		enable_smoothing.setChecked(AudioPathAnalyzer.getApplication().getPreferences().isSmoothingEnabled());
 
 		if (AudioPathAnalyzer.getApplication().getSessionDirect() == null || !AudioPathAnalyzer.getApplication()
 				.getSessionDirect().isConnected()) {
@@ -52,12 +56,14 @@ public class PreferencesActivity extends AppCompatActivity {
 			int min_f = Integer.parseInt(preferences_start_f.getText().toString());
 			int max_f = Integer.parseInt(preferences_end_f.getText().toString());
 			int steps = Integer.parseInt(preferences_steps.getText().toString());
+			boolean smoothing_enabled = enable_smoothing.isChecked();
 
 			if (min_f < 1 || max_f < 1 || steps < 1 || min_f >= max_f) {
 				throw new Exception("Invalid parameters");
 			}
 
-			AudioPathAnalyzer.getApplication().getPreferences().writePreferences(steps, min_f, max_f);
+			AudioPathAnalyzer.getApplication().getPreferences()
+					.writePreferences(steps, min_f, max_f, smoothing_enabled);
 
 			return true;
 		} catch (Exception e) {

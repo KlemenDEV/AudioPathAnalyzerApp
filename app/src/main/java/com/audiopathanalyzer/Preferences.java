@@ -24,11 +24,16 @@ public class Preferences {
 		return preferences.getInt("max_f", 20000);
 	}
 
-	public void writePreferences(int steps_count, int min_f, int max_f) {
+	public boolean isSmoothingEnabled() {
+		return preferences.getBoolean("enable_smoothing", true);
+	}
+
+	public void writePreferences(int steps_count, int min_f, int max_f, boolean enable_smoothing) {
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putInt("steps_count", steps_count);
 		editor.putInt("min_f", min_f);
 		editor.putInt("max_f", max_f);
+		editor.putBoolean("enable_smoothing", enable_smoothing);
 		editor.apply();
 	}
 

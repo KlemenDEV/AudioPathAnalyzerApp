@@ -29,4 +29,5 @@
     <string name="tab_general">Overview</string>
     <string name="tab_bode">Frequency</string>
     <string name="tab_thd">THD factor</string>
+    <string name="enable_smoothing">Enable frequency response smoothing:</string>
 </resources>

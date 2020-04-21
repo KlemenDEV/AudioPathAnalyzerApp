@@ -21,6 +21,9 @@ public class CommandBuilder {
 		sb.append(" --frequency_high ").append(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementMaxF());
 		sb.append(" --steps ").append(AudioPathAnalyzer.getApplication().getPreferences().getMeasurementStepsCount());
 
+		if (!AudioPathAnalyzer.getApplication().getPreferences().isSmoothingEnabled())
+			sb.append("--nosmooth");
+
 		if (opts != null) {
 			sb.append(" ");
 			sb.append(opts);

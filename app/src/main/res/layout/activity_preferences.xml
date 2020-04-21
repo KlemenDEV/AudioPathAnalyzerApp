@@ -18,8 +18,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginRight="75dp"
-                android:layout_marginLeft="250dp"
                 android:id="@+id/preferences_start_f"
                 app:layout_constraintLeft_toRightOf="@id/preferences_label1"
                 app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +32,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginRight="75dp"
                 android:id="@+id/preferences_end_f"
                 app:layout_constraintLeft_toLeftOf="@id/preferences_start_f"
                 app:layout_constraintBottom_toBottomOf="@id/preferences_label2"
@@ -48,7 +45,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:layout_marginRight="75dp"
                 android:id="@+id/preferences_steps"
                 app:layout_constraintLeft_toLeftOf="@id/preferences_start_f"
                 app:layout_constraintBottom_toBottomOf="@id/preferences_label3"
@@ -58,12 +54,22 @@
                 android:importantForAutofill="no"
                 android:hint="@string/sweep_steps_tf" />
 
+        <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/enable_smoothing"
+                app:layout_constraintLeft_toLeftOf="@id/preferences_start_f"
+                app:layout_constraintBottom_toBottomOf="@id/preferences_label4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/preferences_start_f"
+                android:layout_marginEnd="45dp"
+                android:importantForAutofill="no"/>
+
         <TextView
                 android:text="@string/sweep_start_frequency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/preferences_label1"
-                android:layout_marginLeft="75dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/preferences_start_f"
                 android:layout_marginStart="75dp"/>
@@ -73,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/preferences_label2"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="45dp"
                 app:layout_constraintStart_toStartOf="@id/preferences_label1"
                 app:layout_constraintTop_toBottomOf="@id/preferences_label1"/>
 
@@ -82,16 +88,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/preferences_label3"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="45dp"
                 app:layout_constraintStart_toStartOf="@id/preferences_label2"
                 app:layout_constraintTop_toBottomOf="@id/preferences_label2"/>
+
+        <TextView
+                android:text="@string/enable_smoothing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/preferences_label4"
+                android:layout_marginTop="45dp"
+                app:layout_constraintStart_toStartOf="@id/preferences_label3"
+                app:layout_constraintTop_toBottomOf="@id/preferences_label3"/>
 
         <Button android:text="@string/save_changes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="55dp"
                 app:layout_constraintEnd_toEndOf="@id/preferences_steps"
-                app:layout_constraintTop_toBottomOf="@id/preferences_label3"
+                app:layout_constraintTop_toBottomOf="@id/preferences_label4"
                 android:onClick="saveChanges"
                 android:id="@+id/preferences_save"/>
 
@@ -107,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="recalibrate"
-                app:layout_constraintStart_toStartOf="@id/preferences_label3"
+                app:layout_constraintStart_toStartOf="@id/preferences_label4"
                 app:layout_constraintTop_toTopOf="@id/preferences_save"
                 android:id="@+id/preferences_recalibrate"/>
 
